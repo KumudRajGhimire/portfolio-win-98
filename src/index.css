@@ -1,0 +1,70 @@
+/* src/index.css */
+body {
+  /* This is the key: 98.css defines the font in its main styles */
+  font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+  margin: 0;
+  /* Windows 98 desktop background color */
+  background-color: #008080; 
+}
+
+/* A container to wrap the entire app for 98.css base styles */
+.window-app {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Custom Styles for Desktop UI */
+
+/* Taskbar Styling */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: silver; /* 98.css color for components */
+  border-top: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  box-sizing: border-box;
+  z-index: 100; /* Keep the taskbar on top of everything */
+}
+
+.taskbar .start-menu-button {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+.taskbar .start-menu-button img {
+  margin-right: 4px;
+}
+
+/* Desktop Icon Styling */
+.desktop-icon {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px black; /* Classic shadow effect for white text on teal background */
+  padding: 10px;
+  margin: 5px;
+  width: 70px; /* Fixed width for alignment */
+}
+
+.desktop-icon span {
+  margin-top: 5px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.desktop-icon:active, 
+.desktop-icon:focus {
+  /* Mimics the selection/click effect */
+  background-color: rgba(128, 128, 128, 0.5); /* Semi-transparent gray */
+}
