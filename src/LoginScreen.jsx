@@ -46,7 +46,7 @@ const LoginScreen = ({ onLoginSuccess, setMode }) => {
     }}>
       <div className="window" style={{ width: 350 }}>
         <div className="title-bar">
-          <div className="title-bar-text">Welcome to Windows</div>
+          <div className="title-bar-text">Welcome to KumudOS</div>
         </div>
         <div className="window-body">
           <form onSubmit={handleLogin} style={{ padding: '20px' }}>
