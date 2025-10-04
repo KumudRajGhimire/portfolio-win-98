@@ -39,7 +39,7 @@ const BootScreen = ({ onComplete }) => {
         }}>
             {/* Windows 98 Boot Logo / Text */}
             <h1 style={{ marginBottom: '20px', fontSize: '2em', fontWeight: 'normal' }}>
-                W I N D O W S &nbsp; P O R T F O L I O
+                K U M U D ' S &nbsp; P O R T F O L I O
             </h1>
 
             <p>Scanning disk C: ... OK</p>
