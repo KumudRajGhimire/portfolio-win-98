@@ -25,7 +25,7 @@ export const mockProjects = [
   description: 'ExNote is a React + TypeScript and Express web platform offering a curated collection of PYQs and notes specifically for VTU and BMSCE students. With 7,000+ monthly users, it allows fast browsing, searching, and downloading of educational content, providing a reliable and organized resource to help students efficiently prepare for exams.',
   techStack: ['React.js', 'TypeScript', 'Express.js'],
   link: 'https://exnote.vercel.app/',
-  type: 'Web Application',
+  type: 'Web App',
   order: 3,
 },
 
@@ -35,8 +35,18 @@ export const mockProjects = [
     title: 'Windows 98 Portfolio (Self-Reference)',
     description: 'This portfolio site itself! A demonstration of frontend UI/UX development using modern tools (React/Vite) to recreate a nostalgic operating system interface for unique presentation.',
     techStack: ['React.js', 'Vite', '98.css', 'JavaScript', 'Rnd'],
-    link: 'https://github.com/KumudRajGhimire/windows-98-portfolio',
+    link: 'https://kumudrajghimire.com.np',
     type: 'Web Portfolio',
     order: 4,
+  },
+
+  {
+    id: 'p5',
+    title: 'KumTV',
+    description: 'Built with basic html, css and javascript and API from Vidking and TMDB, kumtv is a free movie, series, documentries and anime watching site.',
+    techStack: ['Vanilla js', 'css', 'html', 'tmdb api', 'vidking api'],
+    link: 'https://kumtv.vercel.app',
+    type: 'Web Streaming',
+    order: 5,
   },
 ];

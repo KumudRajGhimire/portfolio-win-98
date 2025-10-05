@@ -8,6 +8,8 @@ const getIconUrl = (type) => {
         case 'Web Platform': return 'https://win98icons.alexmeub.com/icons/png/world-1.png';
         case 'Web Utility': return 'https://win98icons.alexmeub.com/icons/png/laptop_infrared_2-5.png';
         case 'Web Portfolio': return 'https://win98icons.alexmeub.com/icons/png/globe_map-0.png';
+        case 'Web Application': return 'https://win98icons.alexmeub.com/icons/png/address_book_home.png';
+        case 'Web Streaming': return 'https://win98icons.alexmeub.com/icons/png/computer_sound-4.png';
         default: return 'https://win98icons.alexmeub.com/icons/png/directory_closed_cool-3.png';
     }
 };

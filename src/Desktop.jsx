@@ -215,7 +215,7 @@ const Desktop = ({ userMode }) => {
   
   // Define default properties for each Rnd instance
   const defaultRnds = {
-    projects: { x: 50, y: 50, width: 700, height: 500, minWidth: 400, minHeight: 300 },
+    projects: { x: 50, y: 50, width: 700, height: 500, minWidth: 710, minHeight: 450 },
     about: { x: 150, y: 100, width: 500, height: 350, minWidth: 300, minHeight: 200 },
     contact: { x: 200, y: 150, width: 450, height: 350, minWidth: 350, minHeight: 250 },
     resume: { x: 250, y: 50, width: 500, height: 400, minWidth: 400, minHeight: 300 },
