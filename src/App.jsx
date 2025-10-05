@@ -3,16 +3,18 @@ import LoginScreen from './LoginScreen';
 import Desktop from './Desktop'; 
 import MobileBlocker from './MobileBlocker';
 import BootScreen from './BootScreen'; 
+// ⬅️ Vercel Analytics Import
+import { Analytics } from "@vercel/analytics/react"; 
 
 const MIN_DESKTOP_WIDTH = 768; 
 
 // Retrieve initial state from sessionStorage or use defaults
 const initialLoginState = sessionStorage.getItem('isLoggedIn') === 'true';
 const initialUserMode = sessionStorage.getItem('userMode');
-const initialBootState = sessionStorage.getItem('isBooted') === 'true'; // Check if boot already happened
+const initialBootState = sessionStorage.getItem('isBooted') === 'true'; 
 
 function App() {
-  // ⬅️ Load initial states from sessionStorage
+  // Load initial states from sessionStorage
   const [isLoggedIn, setIsLoggedIn] = useState(initialLoginState);
   const [userMode, setUserMode] = useState(initialUserMode); 
   const [isMobile, setIsMobile] = useState(window.innerWidth < MIN_DESKTOP_WIDTH);
@@ -27,14 +29,12 @@ function App() {
     sessionStorage.setItem('userMode', mode);     // Persist user mode
   };
   
-  // NOTE: LogOff logic remains a simple reload, which clears sessionStorage in Desktop.jsx's handleLogOff
-
   const handleBootComplete = () => {
     setIsBooting(false);
     sessionStorage.setItem('isBooted', 'true'); // Persist boot state
   };
   
-  // --- Responsiveness Check (Unchanged) ---
+  // --- Responsiveness Check ---
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -49,30 +49,41 @@ function App() {
   }, []);
 
 
-  // --- Render Logic ---
+  // --- Render Logic (All paths include Analytics) ---
 
   if (isMobile) {
-    return <MobileBlocker />;
+    return (
+        <>
+            <Analytics /> {/* Analytics loads even if the site is blocked */}
+            <MobileBlocker />
+        </>
+    );
   }
   
   // Show Boot Screen only if it hasn't completed yet
   if (isBooting) {
-    return <BootScreen onComplete={handleBootComplete} />;
-  }
-
-  // If not logged in, show the login screen
-  if (!isLoggedIn) {
     return (
-      <LoginScreen 
-        onLoginSuccess={handleLoginSuccess} 
-        setMode={setUserMode}
-      />
+        <>
+            <Analytics />
+            <BootScreen onComplete={handleBootComplete} />
+        </>
     );
   }
 
-  // If logged in, show the desktop
+  // Final rendering path (Login or Desktop)
   return (
-    <Desktop userMode={userMode} />
+    <>
+      <Analytics /> 
+      
+      {!isLoggedIn ? (
+        <LoginScreen 
+          onLoginSuccess={handleLoginSuccess} 
+          setMode={setUserMode}
+        />
+      ) : (
+        <Desktop userMode={userMode} />
+      )}
+    </>
   );
 }
 
